@@ -1,0 +1,30 @@
+#include <iostream>
+
+namespace spaceA
+{
+	int MyVal=10;
+}
+
+namespace spaceB
+{
+	int MyVal=20;
+}
+
+namespace spaceC
+{
+	int MyVal=30;
+}
+
+void Test()
+{
+	using namespace spaceB;
+	std::cout << MyVal << " " << "spaceB" << std::endl;
+}
+
+int main()
+{
+	using namespace spaceA;
+	std::cout << MyVal << " " << "spaceA" << std::endl;
+	Test();
+	std::cout << spaceC::MyVal << " " << "spaceC" << std::endl;
+}
